@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putuint_cnt(unsigned int n, int *count)
+void	ft_putuint_cnt(unsigned int n, int *count)
 {
-    if (n >= 10)
-        ft_putuint_cnt(n / 10, count);
-    write(1, &"0123456789"[n % 10], 1);
-    (*count)++;
+	if (n >= 10)
+		ft_putuint_cnt(n / 10, count);
+	write(1, &"0123456789"[n % 10], 1);
+	(*count)++;
 }

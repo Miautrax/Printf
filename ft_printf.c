@@ -15,7 +15,7 @@
 #include <stddef.h>
 #include <unistd.h>
 
-int put_format(char spec, va_list args, int *count)
+int	put_format(char spec, va_list args, int *count)
 {
 	char			c;
 	char			*str;
@@ -44,10 +44,10 @@ int put_format(char spec, va_list args, int *count)
 	return (*count);
 }
 
-int put_format2(char spec, va_list args, int *count)
+int	put_format2(char spec, va_list args, int *count)
 {
-    unsigned int u;
-    int n;
+	unsigned int	u;
+	int				n;
 
 	if (spec == 'd' || spec == 'i')
 	{
@@ -68,11 +68,14 @@ int put_format2(char spec, va_list args, int *count)
 			ft_puthex_cnt(u, count, "0123456789ABCDEF");
 	}
 	else if (spec == '%')
-	{
-		write(1, "%", 1);
-		(*count)++;
-	}
+		print_percentaje(count);
 	return (*count);
+}
+
+void	print_percentaje(int *count)
+{
+	write(1, "%", 1);
+	(*count)++;
 }
 
 int	ft_printf(char const *format, ...)
@@ -97,5 +100,5 @@ int	ft_printf(char const *format, ...)
 		format++;
 	}
 	va_end(args);
-	return count;
+	return (count);
 }

@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putlong_cnt(long n, int *count)
+void	ft_putlong_cnt(long n, int *count)
 {
 	if (n == -2147483648)
 	{
 		write(1, "-2147483648", 11);
 		*count += 11;
-		return;
+		return ;
 	}
 	if (n < 0)
 	{
@@ -29,4 +29,3 @@ void ft_putlong_cnt(long n, int *count)
 	write(1, &"0123456789"[n % 10], 1);
 	(*count)++;
 }
-
