@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
+
 void	ft_putuint_cnt(unsigned int n, int *count)
 {
 	if (n >= 10)

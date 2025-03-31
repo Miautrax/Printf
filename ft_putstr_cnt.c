@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
+
 void	ft_putstr_cnt(char *str, int *count)
 {
 	if (str == NULL)

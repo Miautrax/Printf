@@ -10,10 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdarg.h>
-#include <stddef.h>
-#include <unistd.h>
+#include "printf.h"
 
 int	put_format(char spec, va_list args, int *count)
 {
@@ -101,4 +98,66 @@ int	ft_printf(char const *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+#include "printf.h"
+
+int main() 
+{
+    int entero = 123;
+    float flotante = 3.14159;
+    double doble = 3.14159265358979;
+    char caracter = 'A';
+    char cadena[] = "Hola, Mundo!";
+    unsigned int numero_sin_signo = 4294967295;
+
+    // Imprimir un número entero en formato decimal
+    ft_printf("Número entero (%%d): %d\n", entero);
+
+    // Imprimir un número entero en formato octal
+    ft_printf("Número entero en octal (%%o): %o\n", entero);
+
+    // Imprimir un número entero en formato hexadecimal (minúsculas)
+    ft_printf("Número entero en hexadecimal (%%x): %x\n", entero);
+
+    // Imprimir un número entero en formato hexadecimal (mayúsculas)
+    ft_printf("Número entero en hexadecimal (%%X): %X\n", entero);
+
+    // Imprimir un número de punto flotante
+    ft_printf("Número flotante (%%f): %f\n", flotante);
+
+    // Imprimir un número de punto flotante con precisión de 2 decimales
+    ft_printf("Número flotante con precisión (%%.2f): %.2f\n", flotante);
+
+    // Imprimir un número de doble precisión (double)
+    ft_printf("Número doble (%%lf): %lf\n", doble);
+
+    // Imprimir un carácter
+    ft_printf("Carácter (%%c): %c\n", caracter);
+
+    // Imprimir una cadena de texto
+    ft_printf("Cadena (%%s): %s\n", cadena);
+
+    // Imprimir un número sin signo
+    ft_printf("Número sin signo (%%u): %u\n", numero_sin_signo);
+
+    // Imprimir un número de punto flotante con ancho de campo
+    ft_printf("Número flotante con ancho de campo (%%10.2f): %10.2f\n", flotante);
+
+    // Imprimir un número entero con ancho de campo
+    ft_printf("Número entero con ancho de campo (%%10d): %10d\n", entero);
+
+    // Imprimir un número entero con ancho de campo y relleno con ceros
+    ft_printf("Número entero con relleno de ceros (%%010d): %010d\n", entero);
+
+    // Imprimir un número en hexadecimal con ancho de campo
+    ft_printf("Número en hexadecimal con ancho (%%#10x): %#10x\n", entero);
+
+    // Imprimir dirección de memoria (puntero)
+    int *puntero = &entero;
+    ft_printf("Dirección de memoria del entero (%%p): %p\n", (void *)puntero);
+
+    // Imprimir un porcentaje
+    ft_printf("Porcentaje (%%): %%\n");
+
+    return 0;
 }

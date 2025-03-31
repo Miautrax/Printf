@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
+
 void	ft_puthex_cnt(unsigned long n, int *count, char *base)
 {
 	if (n >= 16)
