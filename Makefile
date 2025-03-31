@@ -1,6 +1,6 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 
-SRCS = ft_printf.c ft_puthex_cnt.c ft_putlong_cnt.c ft_putstr_cnt.c ft_putuint_cnt.c
+SRCS = ft_printf.c ft_puthex_cnt.c ft_putlong_cnt.c ft_putstr_cnt.c ft_putuint_cnt.c \
 
 FLAGS = -Wall -Wextra -g -Werror
 
