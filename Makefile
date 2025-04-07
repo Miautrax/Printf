@@ -10,8 +10,6 @@ CLEAN = rm -rf
 
 OBJ := $(SRCS:.c=.o)
 
-OBJ_BONUS := $(SRCS_BONUS:.c=.o)
-
 all: $(NAME)
 
 $(OBJ): %.o: %.c
@@ -19,12 +17,6 @@ $(OBJ): %.o: %.c
 
 $(NAME): $(OBJ)
 	ar -rsc $(NAME) $(OBJ)
-
-bonus: $(OBJ_BONUS)
-	ar -rsc $(NAME) $(OBJ_BONUS)
-
-$(OBJ_BONUS): %.o: %.c
-	$(CC) -g $(FLAGS) -c $< -o $@
 
 clean:
 	@$(CLEAN) *.o

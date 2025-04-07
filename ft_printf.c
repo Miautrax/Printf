@@ -99,15 +99,3 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (count);
 }
-
-int	main()
-{
-	ft_printf("Impresión de un solo carácter: %c\n", 'A');
-	ft_printf("Impresión de un string: %s\n", "Soy una string");
-	ft_printf("Impresión de un texto o número a formato hexadecimal: %p es un texto y %p es un número\n", "me encanta cantar", 1998);
-	ft_printf("Impresión de un número decimal con signo: %d\n", -314159);
-	ft_printf("Impresión de un número entero: %i\n", -964);
-	ft_printf("Impresión de un número decimal sin signo: %u\n", 314159);
-	ft_printf("Impresión de un número hexadecimal en minúsculas: %x y otro en mayúsculas: %X\n", 1998, 1998);
-	ft_printf("Impresión de el símbolo del porcentaje: %%");
-}
