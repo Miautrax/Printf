@@ -12,11 +12,26 @@
 
 #include "ft_printf.h"
 
+int	p_format(va_list args, int *count)
+{
+	unsigned long	ptr;
+
+	ptr = (unsigned long)va_arg(args, void *);
+	if (ptr == 0)
+	{
+		write(1, "(nil)", 5);
+		return (*count += 5);
+	}
+	write(1, "0x", 2);
+	*count += 2;
+	ft_puthex_cnt(ptr, count, "0123456789abcdef");
+	return (*count);
+}
+
 int	put_format(char spec, va_list args, int *count)
 {
 	char			c;
 	char			*str;
-	unsigned long	ptr;
 
 	if (spec == 'c')
 	{
@@ -31,10 +46,7 @@ int	put_format(char spec, va_list args, int *count)
 	}
 	else if (spec == 'p')
 	{
-		ptr = (unsigned long)va_arg(args, void *);
-		write(1, "0x", 2);
-		*count += 2;
-		ft_puthex_cnt(ptr, count, "0123456789abcdef");
+		p_format(args, count);
 	}
 	else
 		return (put_format2(spec, args, count));
